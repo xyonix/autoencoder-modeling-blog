@@ -3,22 +3,28 @@ Exploring the Power of Autoencoders for Data Imputation.
 
 # installation
 ```
-# 1. Create and activate a new virtual environment
-python3 -m venv xyonix_autoencoder
-source xyonix_autoencoder/bin/activate
+# 1. Create a conda environment with Python 3.10
+conda create -n xyonix_autoencoder python=3.10
 
-# 2. Upgrade pip, setuptools, wheel
-pip install --upgrade pip setuptools wheel
+# 2. Activate the environment
+conda activate xyonix_autoencoder
 
-# 3. Install Jupyter + minimal required packages
-pip install jupyter ipykernel
-pip install numpy pandas joblib scikit-learn matplotlib seaborn
+# 3. Install essential Python packages via conda
+conda install -c conda-forge jupyter ipykernel numpy pandas joblib scikit-learn matplotlib seaborn
+
+#    Note: The `-c conda-forge` ensures we get up-to-date packages from the conda-forge channel.
+
+# 4. Install TensorFlow
+#    - On most Linux/Windows with Python 3.10:
 pip install tensorflow
 
-# 4. Register a new kernel for this environment
+#    - On M1/M2 Macs (Apple Silicon), install these instead:
+# pip install tensorflow-macos tensorflow-metal
+
+# 5. Register the environment’s kernel with Jupyter
 python -m ipykernel install --user --name xyonix_autoencoder
 
-# 5. Launch Jupyter Notebook
+# 6. Launch Jupyter Notebook
 jupyter notebook
 ```
 
